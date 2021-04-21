@@ -1,8 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-from PyQt4.QtGui  import *
-from PyQt4.QtCore import *
+from PyQt5.QtWidgets  import *
+from PyQt5.QtCore import *
+from pathlib import Path
 import sys
 
 class SimplePyQtGUIKit:
@@ -16,14 +17,9 @@ class SimplePyQtGUIKit:
         """
 
         if not isApp:
-          app = QApplication(sys.argv)
+            app = QApplication(sys.argv)
         files=QFileDialog.getOpenFileNames(caption=caption,filter=filefilter)
-
-        strlist=[]
-        for file in files:
-            strlist.append(str(file))
-
-        return strlist
+        return files[0][0]
 
 
     @classmethod
@@ -84,6 +80,6 @@ if __name__ == '__main__':
     #  optList=SimplePyQtGUIKit.GetCheckButtonSelect(["sample a","sample b","sample c"], title="Select sample", msg="Please select sample")
     #  print optList
     filePath=SimplePyQtGUIKit.GetFilePath(caption=u"Select files",filefilter="*py")
-    print filePath
+    print(filePath)
 
 

@@ -2,6 +2,8 @@
 
 A GUI tool to convert topics from a rosbag file to csv files
 
+## Note: Initially forked from https://github.com/AtsushiSakai/rosbag_to_csv
+
 # Install
 
 clone this repository
